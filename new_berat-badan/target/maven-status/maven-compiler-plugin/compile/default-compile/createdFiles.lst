@@ -1,0 +1,7 @@
+com\beratbadan\controllers\IndexController.class
+com\beratbadan\controllers\BeratBadanController.class
+com\beratbadan\services\BeratBadanService.class
+com\beratbadan\services\impl\BeratBadanServiceImpl.class
+com\beratbadan\entities\BeratBadan.class
+com\beratbadan\SpringBootWebApplication.class
+com\beratbadan\repositories\BeratBadanRepository.class
