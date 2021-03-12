@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Berat Badan</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <div th:if="${not #lists.isEmpty(beratBadan)}">
+        <h2>Berat Badan List</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Tanggal</th>
+                <th>Max</th>
+                <th>Min</th>
+                <th>Perbedaan</th>
+                <th>View</th>
+            </tr>
+            <tr th:each="bb : ${beratBadan}">
+                <td th:text="${bb.id}"><a href="/beratBadan/${bb.id}">Id</a></td>
+                <td th:text="${bb.tanggal}">Tanggal</td>
+                <td th:text="${bb.max}">Max</td>
+                <td th:text="${bb.min}">Min</td>
+                <td th:text="${bb.perbedaan}">Perbedaan</td>
+                <td><a th:href="${ '/beratBadan/' + bb.id}">View</a></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Rata-rata</td>
+                <td th:text="${averageMax}">Rata-rata Max</td>
+                <td th:text="${averageMin}">Rata-rata Min</td>
+                <td th:text="${averagePerbedaan}">Rata-rata Perbedaan</td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
